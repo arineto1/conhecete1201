@@ -1,0 +1,135 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+
+
+
+}
+
+@font-face {
+    font-family: "Retro Gaming";
+    src: url(./conhecetevermelho/paginaOrgao/assets/css/Retro\ Gaming.ttf);
+}
+
+
+#logo {
+    text-align: center;
+    margin: 0;
+    position: relative;
+    top: 30vh;
+    font-family: "Retro Gaming";
+    font-weight: 300;
+    font-size: 75px;
+    color: green;
+    background-color: black;
+    height: 20vh;
+    padding-top: 6vh;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: auto;
+    padding: 10px 5px;
+    z-index: 100;
+    background-size: auto;
+    display: flex;
+    align-items: center;
+    /* Alinhar itens no topo do flex container */
+    justify-content: center;
+
+}
+
+.logo {
+    background-image: url('logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 500px;
+    /* Ajuste o tamanho da logo conforme necessário */
+    margin-left: 50vw;
+    /* Ajuste conforme necessário para o espaçamento à esquerda */
+    margin-top: 50px;
+    /* Ajuste conforme necessário para o espaçamento no topo */
+
+
+}
+
+canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /* O canvas agora tem um índice Z menor para ficar atrás do logo */
+}
+
+.azul {
+    position: fixed;
+    top: 4vh;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+    /* Adicione margens conforme necessário para ajustar o espaçamento */
+}
+
+.azul a {
+    display: block;
+    width: 280px;
+    /* Defina a largura da imagem conforme necessário */
+    height: 350px;
+    /* Defina a altura da imagem conforme necessário */
+    background-image: url('azul.png');
+    /* Substitua pelo caminho da sua imagem */
+    background-size: cover;
+    /* Ajuste o tamanho da imagem conforme necessário */
+    cursor: pointer;
+    /* Adicione um estilo de cursor para indicar que é clicável */
+    text-indent: -9999px;
+    /* Para esconder o texto do link, uma vez que o conteúdo é uma imagem */
+    animation: floatAnimation 2s infinite alternate ease-in-out;
+}
+
+.vermelho {
+    position: fixed;
+    top: 4vh;
+    bottom: 0;
+    left: 0;
+    margin: 10px;
+    /* Adicione margens conforme necessário para ajustar o espaçamento */
+}
+
+.vermelho a {
+    display: block;
+    width: 280px;
+    /* Defina a largura da imagem conforme necessário */
+    height: 350px;
+    /* Defina a altura da imagem conforme necessário */
+    background-image: url('vermelha.png');
+    /* Substitua pelo caminho da sua imagem */
+    background-size: cover;
+    /* Ajuste o tamanho da imagem conforme necessário */
+    cursor: pointer;
+    /* Adicione um estilo de cursor para indicar que é clicável */
+    text-indent: -9999px;
+    /* Para esconder o texto do link, uma vez que o conteúdo é uma imagem */
+    animation: floatAnimation 2s infinite alternate ease-in-out;
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-15px);
+    }
+}

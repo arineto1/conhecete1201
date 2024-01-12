@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<div id="pers" style="font-size: 80PX; background-color: lightgreen; width: 40%;text-align: center; margin: auto; margin-top: 10%;" ></div>
+
+
+<script>
+    var personagem = localStorage.getItem('personagem');
+    if(personagem == 1){
+    document.getElementById('pers').innerHTML = '<a href="../página boneco/homem.html">CONTINUAR</a>';
+    }else if(personagem == 2){
+    document.getElementById('pers').innerHTML = '<a href="../página boneco/mulher.html">CONTINUAR</a>';
+    }
+
+
+</script>
+
+
+</body>
+</html>

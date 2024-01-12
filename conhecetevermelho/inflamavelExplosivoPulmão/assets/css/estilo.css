@@ -1,0 +1,154 @@
+:root {
+    --cor1: #3c0c0c;
+    --cor2: #000000;
+    --cor3: #4b0000;
+    --cor4: #561500;
+    --cor5: #4f0000;
+}
+
+body {
+    background: linear-gradient(270deg, var(--cor1), var(--cor2), var(--cor3), var(--cor4), var(--cor5));
+    background-size: 500% 500%;
+    animation: AnimationName 40s ease infinite;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+@keyframes AnimationName {
+    0% {background-position:0% 50%}
+    50% {background-position:100% 50%}
+    100% {background-position:0% 50%}
+}
+
+header {
+    color: rgba(0, 0, 0, 0.7);;
+    text-align: center;
+    padding: 15px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+header > h1{
+    width: 56%;
+    background-color: #fff;
+    font-weight: 300;
+    border-radius: 10px;
+}
+
+.teste {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px;
+}
+
+.laterais {
+    width: 18vw;
+    height: 175vh;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    overflow: hidden;
+    animation: floatAnimation 2s infinite alternate ease-in-out;
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+.laterais.esquerdo {
+    background-image: url("../imagens/inflamável.png");
+    background-size: cover;
+
+}
+
+.laterais.direito {
+    background-image: url("../imagens/explosivo.png");
+    background-size: cover;
+}
+.meio {
+    flex: 1;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    padding-top: 0;
+    max-width: 800px;
+    margin: 0 20px;
+    min-height: 170vh;
+}
+
+.perguntas {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin: 40px 0;
+    padding: 30px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+
+}
+
+.perguntas:hover {
+    background-color: #bebebe;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.perguntas h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+.alternativas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.labe {
+    display: inline-block;
+    margin-left: 15px; /* Adapte o espaçamento conforme necessário */
+    margin-right: 15px; /* Adapte o espaçamento conforme necessário */
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 20px;
+}
+
+.labe:hover {
+    background-color: #470000;
+    color: white;
+    padding: 15px;
+}
+
+.botao {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+#btn {
+    width: 360px;
+    height: 75px;
+    border-radius: 8px;
+    font-size: 20px;
+    background-color: #480000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+}
+
+#btn:hover {
+    background-color: #320000;
+    color: #fff;
+}

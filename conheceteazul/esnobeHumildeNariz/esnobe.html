@@ -1,0 +1,13 @@
+<div id="pers" style="font-size: 80PX; background-color: lightgreen; width: 40%;text-align: center; margin: auto; margin-top: 10%;" ></div>
+
+
+<script>
+    var personagem = localStorage.getItem('personagem');
+    if(personagem == 1){
+    document.getElementById('pers').innerHTML = '<a href="../página boneco/homem.html">CONTINUAR</a>';
+    }else if(personagem == 2){
+    document.getElementById('pers').innerHTML = '<a href="../página boneco/mulher.html">CONTINUAR</a>';
+    }
+
+
+</script>

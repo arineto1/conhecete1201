@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/estilo.css">
+    <title>Teste</title>
+</head>
+<body>
+    <header>
+        <h1>Frio ou Louco?</h1>
+    </header>
+    <div class="teste">
+        <div class="laterais esquerdo">
+        </div>
+        <div class="meio">
+            <div class="perguntas">
+                <h1>Você pensa mais ou sente mais?
+                </h1>
+                <input type="radio" name="pergunta1" id="radio1" value="frio" class="pergunta"><label class="labe" for="radio1">Penso mais <br></label>
+               <input type="radio" name="pergunta1" id="radio2" value="louco" class="pergunta"><label class="labe" for="radio2">  Sinto mais <br></label>
+            </div>
+            <div class="perguntas">
+                <h1> Você se desconcentra facilmente?</h1>
+               <input type="radio" name="pergunta2" id="radio3" value="frio" class="pergunta"><label class="labe" for="radio3">Não<br></label>
+               <input type="radio" name="pergunta2" id="radio4" value="louco" class="pergunta"><label class="labe" for="radio4">Sim <br></label>
+            </div>
+            <div class="perguntas">
+                <h1>Você prefere ser normal ou diferente? </h1>
+               <input type="radio" name="pergunta3" id="radio5" value="frio" class="pergunta"><label class="labe" for="radio5">Normal <br></label>
+               <input type="radio" name="pergunta3" id="radio6" value="louco" class="pergunta"><label class="labe" for="radio6"> Diferente <br></label>
+            </div>
+            <div class="perguntas">
+                <h1>Você gosta mais de realidade ou de fantasia?
+                </h1>
+               <input type="radio" name="pergunta4" id="radio7" value="frio" class="pergunta"><label class="labe" for="radio7">Realidade <br></label>
+               <input type="radio" name="pergunta4" id="radio8" value="louco" class="pergunta"><label class="labe" for="radio8"> Fantasia <br></label>
+            </div>
+            <div class="perguntas">
+                <h1>Você quer sempre entender ou imaginar?</h1>
+               <input type="radio" name="pergunta5" id="radio9" value="frio" class="pergunta"><label class="labe" for="radio9">Entender<br></label>
+                <input type="radio" name="pergunta5" id="radio10" value="louco" class="pergunta"><label class="labe" for="radio10"> Imaginar <br></label>
+            </div>
+            <div class="botao">
+                <input type="button" id="btn" value="RESULTADO" > 
+            </div>
+        </div>
+        <div class="laterais direito"></div>
+    </div>
+</div>
+
+    <script>
+        //iniciando a função ao clicar no botão Enviar
+        document.getElementById("btn").onclick = function() {
+        var contfrio=0;
+        var contlouco=0;
+        //obtendo todos os radios e atribuindo a variável radios
+        var radios = document.getElementsByClassName("pergunta");
+        //percorrendo todas as posições da variável radios
+        for(var i=0; i<radios.length; i++){
+            //testando os radios para ver se está selecionado
+            if(radios[i].checked) {
+                //testando qual o valor dos radios selecionados
+                //contando os radios selecionados de cada animal
+                if(radios[i].value === "frio"){
+                    contfrio++;
+                } else if(radios[i].value === "louco"){
+                    contlouco++;
+                } }
+            }   
+        //salvando as porcentagens em um "banco" provisório para recuperar em outra página
+        //localStorage que permite que você salve na sessão do navegador algumas informações
+        // e com isso você pode acessar na outra página.
+        localStorage.setItem('porcfrio', contfrio*20);    
+        localStorage.setItem('porclouco', contlouco*20);   
+
+        //mandando para página de resultado
+        
+        if(contlouco+contfrio<5){
+            alert('POR FAVOR, RESPONDA AS 5 PERGUNTAS');
+        }else{
+            if(contlouco > contfrio){
+                window.location.replace("louco.html")
+            } else{
+                window.location.replace("frio.html")
+            }
+        }
+      };
+    
+    </script>
+</body>
+</html>

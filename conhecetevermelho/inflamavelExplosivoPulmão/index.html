@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/estilo.css">
+    <title>Teste</title>
+</head>
+<body>
+    <header>
+        <h1>Explosivo ou Inflamável?</h1>
+    </header>
+    <div class="teste">
+        <div class="laterais esquerdo">
+        </div>
+        <div class="meio">
+            <div class="perguntas">
+                <h1>Você prefere fazer em etapas ou tudo de uma vez?
+                </h1>
+                <input type="radio" name="pergunta1" id="radio1" value="inflamavel" class="pergunta"><label class="labe" for="radio1">Em etapas <br></label>
+               <input type="radio" name="pergunta1" id="radio2" value="explosivo" class="pergunta"><label class="labe" for="radio2">Tudo de uma vez <br></label>
+            </div>
+            <div class="perguntas">
+                <h1>Você gosta de planejar ou improvisar?</h1>
+               <input type="radio" name="pergunta2" id="radio3" value="inflamavel" class="pergunta"><label class="labe" for="radio3">Planejar<br></label>
+               <input type="radio" name="pergunta2" id="radio4" value="explosivo" class="pergunta"><label class="labe" for="radio4">Improvisar<br></label>
+            </div>
+            <div class="perguntas">
+                <h1> Vocês se considera mais espontâneo ou cauteloso? </h1>
+               <input type="radio" name="pergunta3" id="radio5" value="inflamavel" class="pergunta"><label class="labe" for="radio5">Cauteloso <br></label>
+               <input type="radio" name="pergunta3" id="radio6" value="explosivo" class="pergunta"><label class="labe" for="radio6">Espontâneo<br></label>
+            </div>
+            <div class="perguntas">
+                <h1>Você gosta mais de vermelho ou de laranja?
+                </h1>
+               <input type="radio" name="pergunta4" id="radio7" value="inflamavel" class="pergunta"><label class="labe" for="radio7">Vermelho<br></label>
+               <input type="radio" name="pergunta4" id="radio8" value="explosivo" class="pergunta"><label class="labe" for="radio8"> Laranja<br></label>
+            </div>
+            <div class="perguntas">
+                <h1>Você pensa muito antes de agir?</h1>
+               <input type="radio" name="pergunta5" id="radio9" value="inflamavel" class="pergunta"><label class="labe" for="radio9">Sim<br></label>
+                <input type="radio" name="pergunta5" id="radio10" value="explosivo" class="pergunta"><label class="labe" for="radio10">Não <br></label>
+            </div>
+            <div class="botao">
+                <input type="button" id="btn" value="RESULTADO" > 
+            </div>
+        </div>
+        <div class="laterais direito"></div>
+    </div>
+</div>
+
+    <script>
+        //iniciando a função ao clicar no botão Enviar
+        document.getElementById("btn").onclick = function() {
+        var continflamavel=0;
+        var contexplosivo=0;
+        //obtendo todos os radios e atribuindo a variável radios
+        var radios = document.getElementsByClassName("pergunta");
+        //percorrendo todas as posições da variável radios
+        for(var i=0; i<radios.length; i++){
+            //testando os radios para ver se está selecionado
+            if(radios[i].checked) {
+                //testando qual o valor dos radios selecionados
+                //contando os radios selecionados de cada animal
+                if(radios[i].value === "inflamavel"){
+                    continflamavel++;
+                } else if(radios[i].value === "explosivo"){
+                    contexplosivo++;
+                } }
+            }   
+        //salvando as porcentagens em um "banco" provisório para recuperar em outra página
+        //localStorage que permite que você salve na sessão do navegador algumas informações
+        // e com isso você pode acessar na outra página.
+        localStorage.setItem('porcinflamavel', continflamavel*20);    
+        localStorage.setItem('porcexplosivo',contexplosivo*20);   
+
+        //mandando para página de resultado
+        
+        if(contexplosivo+continflamavel<5){
+            alert('POR FAVOR, RESPONDA AS 5 PERGUNTAS');
+        }else{
+            if(contexplosivo > continflamavel){
+                window.location.replace("explosivo.html")
+            } else{
+                window.location.replace("inflamavel.html")
+            }
+        }
+      };
+    
+    </script>
+</body>
+</html>

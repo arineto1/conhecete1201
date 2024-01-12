@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/estilo.css">
+    <title>Teste</title>
+</head>
+<body>
+    <header>
+        <h1>Humilde ou Esnobe?</h1>
+    </header>
+    <div class="teste">
+        <div class="laterais esquerdo">
+        </div>
+        <div class="meio">
+            <div class="perguntas">
+                <h1>Você prefere elogiar ou criticar os outros? </h1>
+                <input type="radio" name="pergunta1" id="radio1" value="esnobe" class="pergunta"><label class="labe" for="radio1">Criticar <br></label>
+               <input type="radio" name="pergunta1" id="radio2" value="humilde" class="pergunta"><label class="labe" for="radio2"> Elogiar <br></label>
+            </div>
+            <div class="perguntas">
+                <h1>Você costuma se comparar com os outros ou com você mesmo? 
+                </h1>
+               <input type="radio" name="pergunta2" id="radio3" value="esnobe" class="pergunta"><label class="labe" for="radio3">Comigo mesmo (a) <br></label>
+               <input type="radio" name="pergunta2" id="radio4" value="humilde" class="pergunta"><label class="labe" for="radio4">Com os outros <br></label>
+            </div>
+            <div class="perguntas">
+                <h1> Você se sente mais orgulhoso ou grato pelo que tem ou pelo que é? 
+                </h1>
+               <input type="radio" name="pergunta3" id="radio5" value="esnobe" class="pergunta"><label class="labe" for="radio5">Orgulhoso (a) <br></label>
+               <input type="radio" name="pergunta3" id="radio6" value="humilde" class="pergunta"><label class="labe" for="radio6"> Grato(a) <br></label>
+            </div>
+            <div class="perguntas">
+                <h1>Você gosta mais de coisas caras ou de coisas simples? 
+                </h1>
+               <input type="radio" name="pergunta4" id="radio7" value="esnobe" class="pergunta"><label class="labe" for="radio7">Caras<br></label>
+               <input type="radio" name="pergunta4" id="radio8" value="humilde" class="pergunta"><label class="labe" for="radio8"> Simples <br></label>
+            </div>
+            <div class="perguntas">
+                <h1>Você prefere ser admirado ou respeitado pelos outros?  </h1>
+               <input type="radio" name="pergunta5" id="radio9" value="esnobe" class="pergunta"><label class="labe" for="radio9">Respeitado <br></label>
+                <input type="radio" name="pergunta5" id="radio10" value="humilde" class="pergunta"><label class="labe" for="radio10"> Admirado<br></label>
+            </div>
+            <div class="botao">
+                <input type="button" id="btn" value="RESULTADO" > 
+            </div>
+        </div>
+        <div class="laterais direito"></div>
+    </div>
+</div>
+
+    <script>
+        //iniciando a função ao clicar no botão Enviar
+        document.getElementById("btn").onclick = function() {
+        var contesnobe=0;
+        var conthumilde=0;
+        //obtendo todos os radios e atribuindo a variável radios
+        var radios = document.getElementsByClassName("pergunta");
+        //percorrendo todas as posições da variável radios
+        for(var i=0; i<radios.length; i++){
+            //testando os radios para ver se está selecionado
+            if(radios[i].checked) {
+                //testando qual o valor dos radios selecionados
+                //contando os radios selecionados de cada animal
+                if(radios[i].value === "esnobe"){
+                    contesnobe++;
+                } else if(radios[i].value === "humilde"){
+                    conthumilde++;
+                } }
+            }   
+        //salvando as porcentagens em um "banco" provisório para recuperar em outra página
+        //localStorage que permite que você salve na sessão do navegador algumas informações
+        // e com isso você pode acessar na outra página.
+        localStorage.setItem('porcesnobe', contesnobe*20);    
+        localStorage.setItem('porchumilde', conthumilde*20);   
+
+        //mandando para página de resultado
+        
+        if(conthumilde+contesnobe<5){
+            alert('POR FAVOR, RESPONDA AS 5 PERGUNTAS');
+        }else{
+            if(conthumilde > contesnobe){
+                window.location.replace("humilde.html")
+            } else{
+                window.location.replace("esnobe.html")
+            }
+        }
+      };
+    
+    </script>
+</body>
+</html>

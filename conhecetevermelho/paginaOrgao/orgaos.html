@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+          *{
+    margin: 0;
+    box-sizing: border-box;
+    }
+    
+    body{
+    background-color: #650000;
+    }
+    header{
+    background-color: #0F0606;
+    height: 15vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    }
+    @font-face {
+      
+  font-family: "Retro Gaming";
+  src: url(./assets/css/Retro\ Gaming.ttf);
+    }
+    
+    header > h1{
+    font-family: "Retro Gaming";
+    font-weight: 300;
+    font-size: 45px;
+    color: white;
+    text-align: center;
+    }
+    .pai{
+        background-color: #1C1515;
+        min-height: 70vh;
+        width: 95vw;
+        margin: auto;
+        margin-top: 7vh;
+        display: flex;
+        justify-content:space-around;
+        align-items: center;
+        padding: 4vh;
+    }
+    .filhos{
+        background-color: white;
+        height: 60vh;
+        width: 17vw;
+        font-family: comic;
+        font-weight: 300;
+        font-size: 30px;
+        text-align: center;
+        padding: 5vh;
+        font-weight: 1000;
+        
+        
+        
+    }
+    .filhos:hover{
+        background-color: #615F5F;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        border: solid 4px black;
+    }
+    .filhos.cerebro{
+        background-image: url(./assets/imagens/cerebro.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: center;
+    }
+    .filhos.coracao{
+        background-image: url(./assets/imagens/coracao.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: center;
+    }
+    .filhos.estomago{
+        background-image: url(./assets/imagens/estomago.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: center;
+    }
+    .filhos.pulmao{
+        background-image: url(./assets/imagens/pulmao.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: center;
+    }
+    .filhos.apendice{
+        background-image: url(./assets/imagens/apendice.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: center;
+    }
+    a{
+        text-decoration: none;
+        
+    }
+    </style>
+
+
+
+</head>
+<body>
+    <header>
+        <h1>ESCOLHA UM TESTE</h1>
+    </header>
+    <div class="pai">
+        <a href="../dependenteEgoistaCérebro/index.html"><div class="filhos cerebro" id="cerebro"></div></a>
+        <a href="../loucoFrioCoração/"><div class="filhos coracao"  id="coracao"></div></a>
+        <a href="../enjoadoGulosoEstomago/"><div class="filhos estomago"  id="estomago"></div></a>
+        <a href="../inflamavelExplosivoPulmão/"><div class="filhos pulmao"  id="pulmao"></div></a>
+        <a href="../inutilExigenteApêndice/"><div class="filhos apendice"  id="apendice"></div></a>
+   
+    </div>
+
+    <script>
+        window.onload = function() {
+                          
+            //EgoistaDependente
+            var porcEgoista = localStorage.getItem('porcegoista');
+            var porcDependente = localStorage.getItem('porcdependente');
+
+            if(porcEgoista>50){
+                document.getElementById('cerebro').innerHTML = "EGOÍSTA";
+                var elemento = document.getElementById('cerebro');
+                elemento.style.backgroundColor = "#ffc300";
+                elemento.style.color = "black";
+                elemento.style.border = "solid 5px black";
+                elemento.style.fontSize = "22px";
+
+            }else  if(porcDependente>50){
+                document.getElementById('cerebro').innerHTML = "DEPENDENTE";
+                var elemento = document.getElementById('cerebro');
+                elemento.style.backgroundColor = "#ffc300";
+                elemento.style.color = "black";
+                elemento.style.border = "solid 5px black";
+                elemento.style.fontSize = "22px";
+            }
+            
+            //FrioLouco
+            var porcFrio = localStorage.getItem('porcfrio');
+            var porcLouco = localStorage.getItem('porclouco');
+
+            if(porcFrio>50){
+                document.getElementById('coracao').innerHTML = "FRIO";
+                var elemento = document.getElementById('coracao');
+                elemento.style.backgroundColor = "#ffc300";
+                elemento.style.color = "black";
+                elemento.style.border = "solid 5px black";
+                elemento.style.fontSize = "22px";
+
+            }else   if(porcLouco>50){
+                document.getElementById('coracao').innerHTML = "LOUCO";
+                var elemento = document.getElementById('coracao');
+                elemento.style.backgroundColor = "#ffc300";
+                elemento.style.color = "black";
+                elemento.style.border = "solid 5px black";
+                elemento.style.fontSize = "22px";
+            }
+
+            //EnjoadoGuloso
+            var porcEnjoado = localStorage.getItem('porcenjoado');
+            var porcGuloso = localStorage.getItem('porcguloso');
+
+            if(porcEnjoado>50){
+                document.getElementById('estomago').innerHTML = "ENJOADO";
+                var elemento = document.getElementById('estomago');
+                elemento.style.backgroundColor = "#ffc300";
+                elemento.style.color = "black";
+                elemento.style.border = "solid 5px black";
+                elemento.style.fontSize = "22px";
+
+            }else   if(porcGuloso>50){
+                document.getElementById('estomago').innerHTML = "GULOSO";
+                var elemento = document.getElementById('estomago');
+                elemento.style.backgroundColor = "#ffc300";
+                elemento.style.color = "black";
+                elemento.style.border = "solid 5px black";
+                elemento.style.fontSize = "22px";
+            }
+
+            //ExplosivoInflamavel
+            var porcExplosivo = localStorage.getItem('porcexplosivo');
+            var porcInflamavel = localStorage.getItem('porcinflamavel');
+
+            if(porcExplosivo>50){
+                document.getElementById('pulmao').innerHTML = "EXPLOSIVO";
+                var elemento = document.getElementById('pulmao');
+                elemento.style.backgroundColor = "#ffc300";
+                elemento.style.color = "black";
+                elemento.style.border = "solid 5px black";
+                elemento.style.fontSize = "22px";
+
+            }else   if(porcInflamavel>50){
+                document.getElementById('pulmao').innerHTML = "INFLAMAVEL";
+                var elemento = document.getElementById('pulmao');
+                elemento.style.backgroundColor = "#ffc300";
+                elemento.style.color = "black";
+                elemento.style.border = "solid 5px black";
+                elemento.style.fontSize = "22px";
+            }
+           
+            //InutilExigente
+            var porcInutil = localStorage.getItem('porcinutil');
+            var porcExigente = localStorage.getItem('porcexigente');
+
+            if(porcInutil>50){
+                document.getElementById('apendice').innerHTML = "INUTIL";
+                var elemento = document.getElementById('apendice');
+                elemento.style.backgroundColor = "#ffc300";
+                elemento.style.color = "black";
+                elemento.style.border = "solid 5px black";
+                elemento.style.fontSize = "22px";
+
+            }else   if(porcExigente>50){
+                document.getElementById('apendice').innerHTML = "EXIGENTE";
+                var elemento = document.getElementById('apendice');
+                elemento.style.backgroundColor = "#ffc300";
+                elemento.style.color = "black";
+                elemento.style.border = "solid 5px black";
+                elemento.style.fontSize = "22px";
+            }
+           
+ 
+
+
+           ;}
+   </script>
+</body>
+</html>
